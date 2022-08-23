@@ -112,4 +112,5 @@ class AccountMoveInherit(models.Model):
         res = super(AccountMoveInherit, self).default_get(fields_list)
         for line in self.invoice_line_ids:
             line.price_unit =  line.price_unit
+            line.price_subtotal = line.price_unit * line.sqf
         return  res
