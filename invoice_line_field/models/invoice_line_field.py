@@ -102,7 +102,7 @@ class AccountMoveLine(models.Model):
             vals = {}
         else:
             # balance is 0, so unit price is 0 as well
-            vals = {'price_unit':0.0}
+            vals = {'price_unit': 0.0}
         return vals
 
 class AccountMoveInherit(models.Model):
