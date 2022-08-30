@@ -18,6 +18,7 @@
                                    <group><field name="digital_print_child" attrs="{'invisible': [('check', '=', False)]}"/></group>
                                    <group><field name="carpet_color"/></group>
                                    <group><field name="meters"/></group>
+                                   <group><field name="width"/></group>
                                    <group><field name="carpet_grade_id"/></group>
                                    <group><field name="carpet_quality" option="{'no_create':True}"/></group>
                                    <group><field name="location_id" invisible="True"/></group>

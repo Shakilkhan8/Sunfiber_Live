@@ -12,7 +12,7 @@ class DeliveryPackingModel(models.Model):
         for line in order.move_ids_without_package:
 
                 data.append({
-                'design_name': line.product_id.name,
+                'design_name': line.product_id.categ_id.name,
                 'quality_name': line.quality_id.name,
                 'child_design': line.product_id.digital_print_child.name if line.product_id.digital_print_child.name else '-',
                 'length': line.product_id.carpet_length,
