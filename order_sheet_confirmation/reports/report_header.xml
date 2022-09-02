@@ -19,6 +19,9 @@
                                 </td>
                                 <td class="text-right"><b>Destination:</b>__________________</td>
                             </tr>
+                            <tr>
+                                <td><b>Order No#:</b><t t-esc="number"/> </td>
+                            </tr>
 
                         </table>
                     </div>
