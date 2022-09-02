@@ -56,7 +56,7 @@
 
                                         <t t-set="ser" t-value="ser+1"/>
                                         <t t-set="total_roll" t-value="total_roll+1"/>
-                                        <t t-set="total_length" t-value="p['length'] + 1"/>
+                                        <t t-set="total_length" t-value="p['length'] + total_length"/>
                                         <tr>
                                             <td width="5%" height="30" style="border:1px solid gray"
                                                 class="text-center">
