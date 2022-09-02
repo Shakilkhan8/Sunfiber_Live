@@ -10,6 +10,7 @@
             <field name="arch" type="xml">
 
 
+
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="sub_customer"/>
                     <field name="customer_note"/>
@@ -41,6 +42,15 @@
                 <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']"
                        position="before">
                     <field name="square_foot"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='qty_invoiced']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='tax_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
 
                 <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_subtotal']"

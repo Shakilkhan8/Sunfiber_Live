@@ -8,7 +8,7 @@ class CarpetColorModel(models.Model):
     color_line_id = fields.One2many('carpet.color.line', 'sale_order_id')
     currency_id = fields.Many2one('res.currency')
     total_price = fields.Monetary('Total Price', readonly=True, store=True)
-   
+
     payment_received = fields.Selection([
         ('Yes', 'Yes'),
         ('No', 'No')
@@ -54,57 +54,41 @@ class CarpetColorModel(models.Model):
 
     @api.onchange('color_line_id')
     def _onchange_line_color(self):
-        for rec in self:
-            order_total = 0
-            total_roll = 0
-            for line in rec.color_line_id:
+        order_total = 0
+        total_roll = 0
+        for line in self.color_line_id:
+            total = 0
+            total_foot = 0
+            total_square_feet = 0
+            # here we calculate total rolls for line
 
-                total = 0
-                total_foot = 0
-                total_square_feet = 0
-                # here we calculate total rolls for line
+            total += line.color_0 + line.color_1 + line.color_2 + line.color_3 + line.color_4 + line.color_5 + line.color_6 + line.color_7 + line.color_8 + line.color_9 + line.color_10 + line.color_11 + line.color_12 + line.color_13 + line.color_14 + line.color_15 + line.color_16 + line.color_17 + line.color_18 + line.color_19 + line.color_20 + line.color_21 + line.color_22 + line.color_23 + line.color_24 + line.color_25 + line.color_26 + line.color_27 + line.color_28 + line.color_29 + line.color_30 + line.color_31 + line.color_32 + line.color_33 + line.color_34 + line.color_35 + line.color_36 + line.color_37 + line.color_38 + line.color_39 + line.color_40 + line.color_41 + line.color_42 + line.color_43 + line.color_44 + line.color_45 + line.color_46 + line.color_47 + line.color_48 + line.color_1d + line.color_1l + line.color_1r + line.color_3d + line.color_3l + line.color_4l + line.color_5l + line.color_6l + line.color_6d + line.color_6m + line.color_7l + line.color_10d + line.color_11l + line.color_11r + line.color_12r + line.color_13l + line.color_14d + line.color_17r
+            total_roll += line.color_0 + line.color_1 + line.color_2 + line.color_3 + line.color_4 + line.color_5 + line.color_6 + line.color_7 + line.color_8 + line.color_9 + line.color_10 + line.color_11 + line.color_12 + line.color_13 + line.color_14 + line.color_15 + line.color_16 + line.color_17 + line.color_18 + line.color_19 + line.color_20 + line.color_21 + line.color_22 + line.color_23 + line.color_24 + line.color_25 + line.color_26 + line.color_27 + line.color_28 + line.color_29 + line.color_30 + line.color_31 + line.color_32 + line.color_33 + line.color_34 + line.color_35 + line.color_36 + line.color_37 + line.color_38 + line.color_39 + line.color_40 + line.color_41 + line.color_42 + line.color_43 + line.color_44 + line.color_45 + line.color_46 + line.color_47 + line.color_48 + line.color_1d + line.color_1l + line.color_1r + line.color_3d + line.color_3l + line.color_4l + line.color_5l + line.color_6l + line.color_6d + line.color_6m + line.color_7l + line.color_10d + line.color_11l + line.color_11r + line.color_12r + line.color_13l + line.color_14d + line.color_17r
+            total_square_feet += line.color_0 + line.color_1 + line.color_2 + line.color_3 + line.color_4 + line.color_5 + line.color_6 + line.color_7 + line.color_8 + line.color_9 + line.color_10 + line.color_11 + line.color_12 + line.color_13 + line.color_14 + line.color_15 + line.color_16 + line.color_17 + line.color_18 + line.color_19 + line.color_20 + line.color_21 + line.color_22 + line.color_23 + line.color_24 + line.color_25 + line.color_26 + line.color_27 + line.color_28 + line.color_29 + line.color_30 + line.color_31 + line.color_32 + line.color_33 + line.color_34 + line.color_35 + line.color_36 + line.color_37 + line.color_38 + line.color_39 + line.color_40 + line.color_41 + line.color_42 + line.color_43 + line.color_44 + line.color_45 + line.color_46 + line.color_47 + line.color_48 + line.color_1d + line.color_1l + line.color_1r + line.color_3d + line.color_3l + line.color_4l + line.color_5l + line.color_6l + line.color_6d + line.color_6m + line.color_7l + line.color_10d + line.color_11l + line.color_11r + line.color_12r + line.color_13l + line.color_14d + line.color_17r
 
-                total += line.color_0 + line.color_1 + line.color_2 + line.color_3 + line.color_4 + line.color_5 + line.color_6 + line.color_7 + line.color_8 + line.color_9 + line.color_10 + line.color_11 + line.color_12 + line.color_13 + line.color_14 + line.color_15 + line.color_16 + line.color_17 + line.color_18 + line.color_19 + line.color_20 + line.color_21 + line.color_22 + line.color_23 + line.color_24 + line.color_25 + line.color_26 + line.color_27 + line.color_28 + line.color_29 + line.color_30 + line.color_31 + line.color_32 + line.color_33 + line.color_34 + line.color_35 + line.color_36 + line.color_37 + line.color_38 + line.color_39 + line.color_40 + line.color_41 + line.color_42 + line.color_43 + line.color_44 + line.color_45 + line.color_46 + line.color_47 + line.color_48 + line.color_1d + line.color_1l + line.color_1r + line.color_3d + line.color_3l + line.color_4l + line.color_5l + line.color_6l + line.color_6d + line.color_6m + line.color_7l + line.color_10d + line.color_11l + line.color_11r + line.color_12r + line.color_13l + line.color_14d + line.color_17r
-                total_roll += line.color_0 + line.color_1 + line.color_2 + line.color_3 + line.color_4 + line.color_5 + line.color_6 + line.color_7 + line.color_8 + line.color_9 + line.color_10 + line.color_11 + line.color_12 + line.color_13 + line.color_14 + line.color_15 + line.color_16 + line.color_17 + line.color_18 + line.color_19 + line.color_20 + line.color_21 + line.color_22 + line.color_23 + line.color_24 + line.color_25 + line.color_26 + line.color_27 + line.color_28 + line.color_29 + line.color_30 + line.color_31 + line.color_32 + line.color_33 + line.color_34 + line.color_35 + line.color_36 + line.color_37 + line.color_38 + line.color_39 + line.color_40 + line.color_41 + line.color_42 + line.color_43 + line.color_44 + line.color_45 + line.color_46 + line.color_47 + line.color_48 + line.color_1d + line.color_1l + line.color_1r + line.color_3d + line.color_3l + line.color_4l + line.color_5l + line.color_6l + line.color_6d + line.color_6m + line.color_7l + line.color_10d + line.color_11l + line.color_11r + line.color_12r + line.color_13l + line.color_14d + line.color_17r
-                total_square_feet += line.color_0 + line.color_1 + line.color_2 + line.color_3 + line.color_4 + line.color_5 + line.color_6 + line.color_7 + line.color_8 + line.color_9 + line.color_10 + line.color_11 + line.color_12 + line.color_13 + line.color_14 + line.color_15 + line.color_16 + line.color_17 + line.color_18 + line.color_19 + line.color_20 + line.color_21 + line.color_22 + line.color_23 + line.color_24 + line.color_25 + line.color_26 + line.color_27 + line.color_28 + line.color_29 + line.color_30 + line.color_31 + line.color_32 + line.color_33 + line.color_34 + line.color_35 + line.color_36 + line.color_37 + line.color_38 + line.color_39 + line.color_40 + line.color_41 + line.color_42 + line.color_43 + line.color_44 + line.color_45 + line.color_46 + line.color_47 + line.color_48 + line.color_1d + line.color_1l + line.color_1r + line.color_3d + line.color_3l + line.color_4l + line.color_5l + line.color_6l + line.color_6d + line.color_6m + line.color_7l + line.color_10d + line.color_11l + line.color_11r + line.color_12r + line.color_13l + line.color_14d + line.color_17r
+            # this is the formula for square feet calculation
+            total_foot += total_square_feet * 36 * 3.281 * 12
+            line.square_foot = total_foot
 
-                # this is the formula for square feet calculation
-                total_foot += total_square_feet * 36 * 3.281 * 12
-                line.square_foot = total_foot
+            # calculate total roll for sale order
+            self.total_roll = total_roll
 
-                # calculate total roll for sale order
-                self.total_roll = total_roll
+            # caculate total roll for order  line
+            line.total_qty = total
+            line.total_price = line.square_foot * line.price_unit - (
+                    line.square_foot * line.price_unit * line.discount / 100)
 
-                # caculate total roll for order  line
-                line.total_qty = total
-                line.total_price = line.square_foot * line.price_unit - (
-                        line.square_foot * line.price_unit * line.discount / 100)
+            # calculate line total price
+            order_total += line.total_price
+            self.total_price = order_total
 
-                # calculate line total price
-                order_total += line.total_price
-                self.total_price = order_total
-
-                if line.design_id:
-                    # if parent design is digital printed then we make child design required
-                    if line.design_id.name == 'Digital Printed' or line.design_id.name == 'Digital Printed with Felt' or line.design_id.name == 'Tufted Graphics' or line.design_id.name == 'Tufted Scroll' :
-
-                        line.check_design = True
-                    else:
-                        line.check_design = False
-
-                    # here we load the parent design image in order booking line
-                    line.image = line.design_id.design_image
-                    if line.design_id.name == 'Digital Printed' or line.design_id.name == 'Digital Printed with Felt' or line.design_id.name == 'Tufted Scroll' or line.design_id.name == 'Tufted Graphics' :
-                        line.child_image = line.child_design_id.image
-                    else:
-                        line.child_image = False
-
-                    # if both design and quality selected then we concatenate the both to create product name
-                    if line.design_id and line.quality_id:
-                        if line.design_id.name == 'Digital Printed' or line.design_id.name == 'Digital Printed with Felt'  or line.design_id.name == 'Tufted Scroll' or line.design_id.name == 'Tufted Graphics':
-                            line.product_id = line.design_id.name + " / " + line.child_design_id.name + " / " + line.quality_id.name
-                        else:
-                            line.product_id = line.design_id.name + " " + line.quality_id.name
+            # if both design and quality selected then we concatenate the both to create product name
+            if line.design_id and line.quality_id:
+                if line.child_design_id:
+                    line.product_id = line.design_id.name + " / " + str(
+                        line.child_design_id.name) + " / " + line.quality_id.name
+                else:
+                    line.product_id = line.design_id.name + " " + line.quality_id.name
 
 
 class CarpetColorline(models.Model):
@@ -201,6 +185,22 @@ class CarpetColorline(models.Model):
     product_name = fields.Char("Name")
     line_id = fields.Char('Line id')
 
+    @api.onchange('child_design_id')
+    def _onchange_child_design_id(self):
+        if self.child_design_id:
+            self.child_image = self.child_design_id.image
+
+    @api.onchange('design_id')
+    def _onchange_design_id(self):
+        if self.design_id:
+            self.image = self.design_id.design_image
+
+        # here we make child design required on the base of come specific category
+        if self.design_id.name == 'Digital Printed' or self.design_id.name == 'Digital Printed with Felt' or self.design_id.name == 'Tufted Graphics' or self.design_id.name == 'Tufted Scroll':
+            self.check_design = True
+        else:
+            self.check_design = False
+
 
 class InheritSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -212,10 +212,10 @@ class InheritSaleOrderLine(models.Model):
     price_subtotal = fields.Float(store=1)
     price_unit = fields.Float('Price Unit', store=True)
 
-    @api.depends('square_foot','price_unit')
-    def _compute_sutotal(self):
+    @api.depends('square_foot', 'price_unit')
+    def _compute_subtotal(self):
         for line in self:
-            line.price_subtotal = line.price_unit *  line.square_foot
+            line.price_subtotal = line.price_unit * line.square_foot
 
     @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
     def _compute_amount(self):
