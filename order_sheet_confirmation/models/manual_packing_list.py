@@ -702,6 +702,7 @@ class ManualPackingListModel(models.TransientModel):
             'customer': order.partner_id.name,
             'sub_customer': order.sub_customer,
             'number': order.name,
+            'customer_note': order.customer_note,
         }
 
 
