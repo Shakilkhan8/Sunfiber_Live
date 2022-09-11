@@ -66,8 +66,10 @@
 
                             </div>
                         <div class="row mt-3">
-                            <div class="col-4">
+                            <div class="col-12">
                                 <span><b>Signature ________________</b></span>
+                                <br/>
+                                <br/>
                                 <t t-if="customer_note">
                                 <p><b>Customer Note:</b><t t-esc="customer_note" /></p>
                                 </t>
