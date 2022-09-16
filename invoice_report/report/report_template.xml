@@ -25,8 +25,8 @@
                               <th class="text-center" style="border: 1px solid black">Amount (PKR)</th>
                           </thead>
                           <tr>
-                              <td style="border:1px solid black; text-align:center" height="300px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                              <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-set="ser" t-value="0"/>
                                       <t t-set="total_length" t-value="0"/>
                                       <t t-set="total_qty" t-value="0"/>
@@ -45,8 +45,8 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="500px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                              <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-foreach="o.invoice_line_ids" t-as="p">
                                           <tr>
                                               <td>
@@ -57,8 +57,8 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="500px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                              <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-foreach="o.invoice_line_ids" t-as="p">
                                           <tr>
                                               <td>
@@ -69,8 +69,8 @@
                                   </table>
                               </td>
 
-                                  <td style="border:1px solid black; text-align:center" height="500px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                                  <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-foreach="o.invoice_line_ids" t-as="p">
                                           <tr>
                                               <td >
@@ -81,8 +81,8 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="500px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                              <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-foreach="o.invoice_line_ids" t-as="p">
                                           <tr>
                                               <td>
@@ -93,8 +93,8 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="500px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                              <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-foreach="o.invoice_line_ids" t-as="p">
                                           <tr>
                                               <td>
@@ -105,8 +105,8 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="500px">
-                                  <table width="100%" style="margin-bottom:390px;">
+                              <td style="border:1px solid black; text-align:center" >
+                                  <table width="100%" >
                                       <t t-foreach="o.invoice_line_ids" t-as="p">
                                           <tr>
                                               <td>
